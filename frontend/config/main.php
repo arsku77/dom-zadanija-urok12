@@ -50,19 +50,6 @@ return [
         'stringHelper' => [
             'class' => 'common\components\StringHelper',
         ],
-        'assetManager' => [
-            'bundles' => [
-                'yii\web\JqueryAsset' => [
-                    'js'=>[]
-                ],
-                'yii\web\YiiAsset' => [
-                    'js'=>[]
-                ],
-                'yii\bootstrap\BootstrapPluginAsset' => [
-                    'js'=>[]
-                ],
-            ],
-        ],
     ],
     'params' => $params,
     'aliases' => [

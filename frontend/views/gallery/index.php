@@ -2,19 +2,16 @@
 
 /* @var $this yii\web\View */
 
-//use frontend\assets\GalleryAsset;
+use frontend\assets\GalleryAsset;
 //
-//GalleryAsset::register($this);
-//
-//$this->registerJsFile('@web/js/gallery/scripts.js', ['depends' => [
-//        GalleryAsset::className()
-//]]);
+GalleryAsset::register($this);
+$this->registerJsFile('@web/js/gallery/scripts.js', ['depends' => [
+        GalleryAsset::className()
+]]);
 ?>
 
 <h1>Gallery</h1>
-<link rel= "stylesheet" href="/css/gallery/style.css" />
-<script src="/js/jquery-latest.js" type="text/javascript"></script>
-<script src="js/isotope/jquery.isotope.js" type="text/javascript"></script>
+
 
 <div class="portfolioFilter">
 
@@ -61,34 +58,3 @@
     </div>	
 
 </div>
-<script type="text/javascript">
-
-    $(window).load(function(){
-        var $container = $('.portfolioContainer');
-        $container.isotope({
-            filter: '*',
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-
-        $('.portfolioFilter a').click(function(){
-            $('.portfolioFilter .current').removeClass('current');
-            $(this).addClass('current');
-
-            var selector = $(this).attr('data-filter');
-            $container.isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false
-                }
-            });
-            return false;
-        });
-    });
-
-</script>
